@@ -11,7 +11,12 @@ dotenv.config();
 const app = express();
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-app.use(cors({ origin: process.env.CLIENT_URL, credentials: true }));
+app.use(
+  cors({
+    origin: "https://estate-frontend-cx139xu70-vjygours-projects.vercel.app/",
+    credentials: true,
+  })
+);
 app.use(express.json());
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "dist")));
